@@ -33,25 +33,21 @@ namespace URLEncoder
             urlCorrections.Add("]", "%5D");
             urlCorrections.Add("'", "%27");
 
-            Console.WriteLine(" welcome to URL Encoder ");
+            Console.WriteLine("\n HELLO, You have entered the URL Encoder ");
             
             do
             {
-                Console.Write("\nProject name: ");
+                Console.Write("\nName of Project: ");
                 string projectName = GetUserInput();
-                Console.WriteLine("Active name: ");
+                Console.WriteLine("Active Name: ");
                 string activeName = GetUserInput();
 
-                Console.WriteLine(CreateURL(projectName, activeName));
+                Console.WriteLine(CreateURL(projectName, activeName))
 
-                /* ask user for a retry */
+                Console.WriteLine("Would you like to retry? (yes/n0): ");
 
-                Console.WriteLine("would you like to try again? (y/n): ");
-
-            } while (Console.ReadLine().ToLower().Equals(" y "));
+            } while (Console.ReadLine().ToLower().Equals(" yes "));
         }
-
-        /* create & return string */
 
         static string CreateURL(string projectName, string activityName)
         {
@@ -67,7 +63,7 @@ namespace URLEncoder
             {
                 input = Console.ReadLine();
                 if (IsValid(input)) return input;
-                Console.WriteLine(" You entered invalid characters, please try again: ");
+                Console.WriteLine(" You entered invalid characters, please re enter your data: ");
 
             } while (true);
 
